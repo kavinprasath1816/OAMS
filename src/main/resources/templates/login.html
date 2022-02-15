@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="icon" th:href="@{/images/college.jpeg}">
+</head>
+<body>
+    <div class="box">
+        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" hidden/>
+        <label for="reg-log"></label>  
+        <div class="header">
+            <label class="hy">Student</label>
+            <label class="hy2">Staff</label>
+        </div>
+        <div class="container-md">
+            <div class="card-3-wrapper">
+                <form class="form" autocomplete="off" name="f" th:action="@{/student}" method="post">
+                    <div class="center">
+                        <div class="display1" th:if="${param.error}" >
+                            <a>Invalid Credentials</a>
+                        </div>
+                        <div class="display1" th:unless="${param.error}">
+                            <a>Student Login</a>
+                        </div>
+                        <div class="form__input">
+                            <input  type="email" name="username" placeholder=" " autocomplete="off" required>
+                            <label for="username">Email</label><br>
+                        </div><br>
+                        <div class="form__input">
+                            <input type="password" name="password" placeholder=" " autocomplete="off" required>
+                            <label for="password">Password</label><br>
+                        </div><br>
+                        <div class="form__button">
+                            <button type="submit" class="btn btn-outline-info">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-back">
+            <div class="card-3d-wrapper">
+                <form class="form" autocomplete="off" name="f" th:action="@{/staff}" method="post">
+                    <div class="center">
+                        <div class="display1" th:if="${param.error}" >
+                            <a>Invalid Credentials</a>
+                        </div>
+                        <div class="display1" th:unless="${param.error}">
+                            <a>Staff Login</a>
+                        </div>
+                        <div class="form__input">
+                            <input  type="email" name="username" placeholder=" " autocomplete="off" required>
+                            <label for="username">Email</label><br>
+                        </div><br>
+                        <div class="form__input">
+                            <input type="password" name="password" placeholder=" " autocomplete="off" requires>
+                            <label for="password">Password</label><br>
+                        </div><br>
+                        <div class="form__button">
+                            <button type="submit" class="btn btn-outline-info">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    document.addEventListener('contextmenu',(e)=>{
+    e.preventDefault();
+  }
+  );
+  document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+</script>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Home</title>
+  <link rel="icon" th:href="@{/images/college.jpeg}">
+  <link rel="stylesheet" href="../css/home.css">
+
+</head>
+<body>
+<div class="con">
+  <section class="header">
+    <nav>
+      <a  class="title" th:href="@{/home}">University</a>
+      <div class="nav-links">
+        <ul>
+          <li><a th:href="@{/home}">Home</a></li>
+          <li><a th:href="@{/student/form}">Register</a></li>
+          <li sec:authorize="hasAuthority('admin')"><a  th:href="@{/admin/main-page}">Dashboard</a></li>
+          <li sec:authorize="hasAuthority('Staff')"><a  th:href="@{/staff/main-page}">Dashboard</a></li>
+          <li sec:authorize="hasAuthority('student')"><a   th:href="@{/student/main-page}">Dashboard</a></li>
+          <li sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">Logout</a></li>
+          <li sec:authorize="isAnonymous()"><a  th:href="@{/student}">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <div class="slider">
+    <div class="slides">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+
+      <div class="slide first">
+        <img th:src="@{/images/slide 1.jpeg}"  alt="" width="200px" height="635px">
+      </div>
+      <div class="slide">
+        <img th:src="@{/images/slide 2.jpeg}"  alt="" width="200px" height="635px">
+      </div>
+      <div class="slide">
+        <img th:src="@{/images/slide 3.jpeg}"  alt="" width="200px" height="635px">
+      </div>
+      <div class="slide">
+        <img th:src="@{/images/slide 4.jpeg}" alt="" width="200px" height="635px">
+      </div>
+
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+    </div>
+  </div>
+  <div class="display">
+    <div class="container-3">
+      <h2>Eligibility</h2>
+      <h2>Nationality:</h2>
+      <ul>
+        <li>The applicant should be a Resident / Non Resident Indian National.</li>
+        <li>Candidates studied/studying abroad can apply directly through foreign category.</li>
+      </ul>
+      <h2>Age Limit :</h2>
+      <ul>
+        <li>Candidates whose date of birth falls on or after 1st July 2000 are eligible to apply.</li>
+        <li>Date of birth as recorded in the High School / SSC / X Certificate will be considered authentic.</li>
+        <li>Candidates should produce this certificate in original as a proof of their age at the time of counselling / admission, failing which they will be disqualified.</li>
+      </ul>
+    </div>
+    <div class="eligible">
+      <img th:src="@{/images/eligible.jpeg}">
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <h3>University Of India</h3>
+      <p>“Education is the most powerful weapon which you can use to change the world”</p>
+      <ul class="socials">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>copyright &copy;2022 university of india</p>
+    </div>
+  </footer>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+document.addEventListener('contextmenu',(e)=>{
+    e.preventDefault();
+  }
+  );
+  document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+        var count = 1;
+        setInterval(function(){
+            document.getElementById('radio' + count).checked = true;
+            count++;
+            if(count > 4){
+                count = 1
+            }
+        },5000);
+    </script>
+
+</body>
+</html>

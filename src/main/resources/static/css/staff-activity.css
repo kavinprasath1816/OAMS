@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');
+@import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color:#060b23;
+
+}
+.box{
+  height: 100%;
+  width: 100%;
+  justify-content:space-around;
+}
+.card-img-top{
+  position: relative;
+  left: 20px;
+  border-radius: 15px;
+  width: 200px;
+  height: 220px;
+}
+.card{
+  top: -2rem;
+  width: 250px;
+  left: 5rem;
+  position: relative;
+  border: 2px solid white;
+  cursor: pointer;
+  display:inline-block;
+  transition:all 1s;
+}
+/* Slideshow container */
+.slideshow-container {
+  overflow: hidden;
+  position: relative;
+  background:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+  border-radius: 15px;
+  top: 2.5rem;
+  left: 13rem;
+  height: 35rem;
+  width: 70rem;
+}
+
+/* Slides */
+.mySlides {
+  position: relative;
+  top: 3rem;
+  display: none;
+  padding: 35px;
+}
+
+/* Next & previous buttons */
+.prev,.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.slide a{
+  color: #03e9f4;
+
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.slide:hover {
+  color: white;
+}
+.badge{
+  z-index: 2;
+  position: absolute;
+  right: 0;
+}
+#dis-1,#dis-2,#dis-3,#dis-4,#dis-5,#dis-6{
+  color: #fff;
+  font-size: 18px;
+}
+.details{
+  font-size: 18px;
+  width: 500px;
+  height: 70px;
+  position: relative;
+  left: 30rem;
+  top: -28rem;
+  display: block;
+}
+.details span{
+  color: #03e9f4;
+
+}
+.navbar{
+  height: 90px;
+  background-color:#060b23;
+}
+.nav-link{
+  color: white;
+}
+.nav-link:hover{
+  color: #03e9f4;
+}
+.nav-link:active{
+  color: sandybrown;
+}
+.nav-item{
+  margin-left: 50px;
+}
+.nav-item a::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #03e9f4;;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+.nav-item a:hover::after{
+   width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
